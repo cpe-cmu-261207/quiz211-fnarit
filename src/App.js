@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 function App() {
   const persons = [
     {
@@ -30,15 +31,25 @@ function App() {
           </tr>
         </tbody>
       </table>
-
+    </div>  
       {/* Code me please! */}
-      <h3 class="title is-3">ID Counter</h3>
-      <p>YOUR ID HERE</p>
-      <button>-</button>
-      <button>reset</button>
-      <button>+</button>
-    </div>
-  );
+      
+      const App = () => {
+        let a = 620612152;
+        const [count, setCount] = useState(a)
+        const plus = () => setCount(count+1)
+        const minus = () => setCount(count-1)
+        const reset = () => setCount(this.setCount())
+      return(
+        <div className="App">
+        <h3 class="title is-3">ID Counter</h3>
+        <p>{a}</p>
+        <button onClick={minus}>-</button>
+        <button>reset</button>
+        <button onClick={plus}>+</button>
+        </div>
+      );
+      
 }
 
 export default App;
